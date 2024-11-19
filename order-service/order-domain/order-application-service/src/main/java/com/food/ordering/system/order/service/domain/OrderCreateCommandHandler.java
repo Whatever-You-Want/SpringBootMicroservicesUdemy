@@ -32,6 +32,4 @@ public class OrderCreateCommandHandler {
         orderCreatedPaymentRequestMessagePublisher.publish(orderCreatedEvent);
         return orderDataMapper.orderToCreateOrderResponse(orderCreatedEvent.getOrder());
     }
-
-
 }
