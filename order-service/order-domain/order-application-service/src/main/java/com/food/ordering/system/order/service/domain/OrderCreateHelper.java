@@ -61,7 +61,6 @@ public class OrderCreateHelper {
             log.warn("Restaurant with id {} not found", createOrderCommand.getRestaurantId());
             throw new OrderDomainException("Restaurant with id " + createOrderCommand.getRestaurantId() + " not found");
         }
-
         return restaurantOptional.get();
     }
 
