@@ -1,6 +1,7 @@
 package com.food.ordering.system.order.service.messaging.publisher.kafka;
 
 import com.food.ordering.system.kafka.order.avro.model.RestaurantApprovalRequestAvroModel;
+import com.food.ordering.system.kafka.order.avro.model.RestaurantApprovalResponseAvroModel;
 import com.food.ordering.system.kafka.producer.service.KafkaProducer;
 import com.food.ordering.system.order.service.domain.config.OrderServiceConfigData;
 import com.food.ordering.system.order.service.domain.event.OrderPaidEvent;
@@ -48,8 +49,5 @@ public class PayOrderKafkaMessagePublisher implements OrderPaidRestaurantRequest
             log.error("Error while sending RestaurantApprovalRequestAvroModel to Kafka for order id {} with error {}", orderId, e.getMessage());
             throw new RuntimeException(e);
         }
-
     }
-
-
 }
